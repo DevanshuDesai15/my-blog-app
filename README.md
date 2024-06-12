@@ -1,8 +1,7 @@
-# React + Vite
+# Blogger
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a basic blog application where I am learning a new technology, GCP for the backend.
 
-Currently, two official plugins are available:
+## Future Enhancements:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Include some LLMs or maybe an AI functionality in this blog application.
