@@ -4,15 +4,16 @@ import About from "./components/About.jsx";
 import ArticleList from "./components/ArticleList.jsx";
 import Article from "./components/Article.jsx";
 import NotFound from "./components/NotFound.jsx";
+import NavBar from "./sub-components/NavBar.jsx";
 
 
 function App() {
 
   return (
       <Router>
-        <div className="">
-          <h1 className="text-3xl font-bold underline">My Blog App</h1>
-            <div className="pt-4 mx-auto max-w-3xl">
+        <div className="font-sans text-base">
+            <NavBar />
+            <div className="pt-24 text-center mx-auto max-w-7xl">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
