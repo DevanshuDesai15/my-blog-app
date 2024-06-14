@@ -13,7 +13,7 @@ function App() {
       <Router>
         <div className="font-sans text-base">
             <NavBar />
-            <div className="pt-24 text-center mx-auto max-w-7xl">
+            <div className="pt-24 text-center mx-auto max-w-5xl">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
