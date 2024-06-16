@@ -1,8 +1,31 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 50 ) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+
+    let navbarClasses = ['border-b-4', 'text-center', 'fixed', 'top-0', 'w-full'];
+    if (scrolled) {
+        navbarClasses.push('bg-black');
+    } else {
+        navbarClasses.push('bg-transparent');
+    }
+
     return (
-        <nav className="border-b-4 border-amber-100 text-center fixed top-0 w-full">
+        <nav className={navbarClasses.join(" ")}>
             <ul className="list-none m-0 p-0">
                 <li className="inline-block pt-6 pb-6">
                     <Link to="/"
