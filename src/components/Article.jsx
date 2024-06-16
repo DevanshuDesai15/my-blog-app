@@ -1,10 +1,15 @@
 import { useParams } from "react-router-dom";
 import articles from "../sub-components/ArticleContent.jsx";
+import NotFound from "./NotFound.jsx";
 
 const Article = () => {
     const { id} = useParams();
 
     const article = articles.find(article => article.name === id);
+
+    if(!article) {
+        return <NotFound />
+    }
 
     return (
         <div className="p-4">
