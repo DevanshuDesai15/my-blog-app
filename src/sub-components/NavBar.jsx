@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -29,15 +30,18 @@ const NavBar = () => {
             <ul className="list-none m-0 p-0">
                 <li className="inline-block pt-6 pb-6">
                     <Link to="/"
-                          className="no-underline text-white font-bold px-6 py-6 hover:bg-white hover:text-black">Home</Link>
+                          className={`no-underline text-white font-bold px-6 py-6 hover:bg-white hover:text-black
+                          ${location.pathname === "/" ? 'bg-blue-200 text-black' : ''}`}>Home</Link>
                 </li>
                 <li className="inline-block pt-6 pb-6">
                     <Link to="/about"
-                          className="no-underline text-white font-bold px-6 py-6 hover:bg-white hover:text-black">About</Link>
+                          className={`no-underline text-white font-bold px-6 py-6 hover:bg-white hover:text-black
+                          ${location.pathname === "/about" ? 'bg-blue-200 text-black' : ''}`}>About</Link>
                 </li>
                 <li className="inline-block pt-6 pb-6">
                     <Link to="/articles"
-                          className="no-underline text-white font-bold px-6 py-6 hover:bg-white hover:text-black">Articles</Link>
+                          className={`no-underline text-white font-bold px-6 py-6 hover:bg-white hover:text-black
+                          ${location.pathname === "/articles" ? 'bg-blue-200 text-black' : ''}`}>Articles</Link>
                 </li>
             </ul>
         </nav>
