@@ -8,15 +8,15 @@ const ArticleList = () => {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/articles/list-articles')
-            .then(response => {
-                setArticles(response.data)
-                console.log(response.data)
+        axios.get("http://localhost:3000/articles/list-articles")
+            .then((response) => {
+                // console.log(response.data);
+                setArticles(response.data);
             })
-            .catch(err => {
-                console.log(err);
-            })
-    })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     return (
         <div className="flex flex-col justify-start">
