@@ -72,4 +72,14 @@ router.get("/search/:name", async (req, res) => {
     }
 });
 
+// delete articles
+router.delete("/:id", async (req, res) => {
+    try{
+        const article = await Article.findByIdAndDelete(req.params.id);
+        res.send(`Deleted ${article.title}`);
+    } catch(err){
+        res.status(400)
+    }
+})
+
 export default router;
