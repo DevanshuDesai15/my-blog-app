@@ -7,13 +7,13 @@ import NotFound from "./NotFound.jsx";
 const Article = () => {
     const { _id } = useParams();
 
-    const [article, setArticle] = useState([]);
+    const [article, setArticle] = useState({});
 
     useEffect(() => {
         axios.get(`http://localhost:3000/articles/${_id}`)
             .then((response) => {
                 setArticle(response.data);
-                // console.log(response.data);
+                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -27,10 +27,9 @@ const Article = () => {
     return (
         <div className="p-4">
             <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
-            {/* {article.content.map((paragraph, key) => (
-                <p className="text-base mb-2 text-left" key={key}>{paragraph}</p>
-            ))} */}
-            <p className="text-base mb-2 text-left">{article.content}</p>
+            {article.content && article.content.map((paragraph, key) => (
+                <p key={key} className="text-base mb-2 text-left">{paragraph}</p>
+            ))}
         </div>
     );
 }
