@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 // import articles from "../sub-components/ArticleContent.jsx";
 import axios from "axios";
 import NotFound from "./NotFound.jsx";
+import Comment from "../sub-components/Comment.jsx";
 
 const Article = () => {
     const { _id } = useParams();
@@ -30,6 +31,7 @@ const Article = () => {
             {article.content && article.content.map((paragraph, key) => (
                 <p key={key} className="text-base mb-2 text-left">{paragraph}</p>
             ))}
+            <Comment />
         </div>
     );
 }
